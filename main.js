@@ -1,41 +1,35 @@
 const mongoose = require('mongoose');
 const MONGO_URI = 'mongodb://localhost:27017/app';
+const User = require('./models/User');
+const data = require('./data.js');
 
 mongoose.connect(MONGO_URI)
   .then((x) => {
     console.log(`Connected to ${x.connection.name} database`);
   })
   .then(() => {
-    // Iteration 2
-    // return ...
+   //return User.create({name: 'Cristian', email: 'ironhack@ironhack.com', age: 31, programmingLevel: 'beginner'})
   })
   .then((user) => {
-    // Iteration 2
-    // console.log('Created: ', user)
+    //console.log('Created: ', user)
   })
   .then(() => {
-    // Iteration 3
-    // return ...
+    //return User.findOneAndUpdate({name: 'Cristian'},{name: 'Cristian AR'})
   })
   .then((user) => {
-    // Iteration 3
-    // console.log('Edited: ', user)
+    //console.log('Edited: ', user)
   })
   .then(() => {
-    // Iteration 4
-    // return ...
+    //return User.insertMany(data);
   })
   .then((users) => {
-    // Iteration 4
-    // console.log('Created: ', users)
+    //console.log('Created: ', users)
   })
   .then(() => {
-    // Iteration 5
-    // return ...
+    return User.findOneAndDelete({email:"pepe@gmail.com"})
   })
   .then((user) => {
-    // Iteration 5
-    // console.log('Deleted: ', user)
+    console.log('Deleted: ', user)
   })
   .then(() => {
     mongoose.connection.close();

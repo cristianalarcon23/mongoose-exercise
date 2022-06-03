@@ -8,22 +8,22 @@ mongoose.connect(MONGO_URI)
     console.log(`Connected to ${x.connection.name} database`);
   })
   .then(() => {
-   //return User.create({name: 'Cristian', email: 'ironhack@ironhack.com', age: 31, programmingLevel: 'beginner'})
+   return User.create({name: 'Cristian', email: 'ironhack@ironhack.com', age: 31, programmingLevel: 'beginner'})
   })
   .then((user) => {
-    //console.log('Created: ', user)
+    console.log('Created: ', user)
   })
   .then(() => {
-    //return User.findOneAndUpdate({name: 'Cristian'},{name: 'Cristian AR'})
+    return User.findOneAndUpdate({name: 'Cristian'},{name: 'Cristian AR'})
   })
   .then((user) => {
-    //console.log('Edited: ', user)
+    console.log('Edited: ', user)
   })
   .then(() => {
-    //return User.insertMany(data);
+    return User.insertMany(data);
   })
   .then((users) => {
-    //console.log('Created: ', users)
+    console.log('Created: ', users)
   })
   .then(() => {
     return User.findOneAndDelete({email:"pepe@gmail.com"})
